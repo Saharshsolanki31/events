@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>User Registration</title>
+
+  </head>
+  <body>
+  <div class="container-fluid p-1" style="height:60px;background-color:cornflowerblue;"><h1 style="float: left">Registration For Event</h1><a href="{% url 'logout' %}" class="btn btn-danger mt-2" style="float: right">Logout</a></div>
+  {% include 'messages.html' %}
+<h3 class="text-center">User Data</h3>
+{% if user_data is not None %}
+    <div class="container-fluid shadow" style="max-width: 100%;overflow: auto">
+  <table class="table table-striped" >
+
+      <tr>
+          <td>{{ user_data.id }}</td>
+
+          <td>Name</td>
+          <td>Number</td>
+          <td>Email</td>
+          <td>Address</td>
+          <td>College Name</td>
+          <td>link</td>
+          <td>File</td>
+
+      </tr>
+      {% for user_data in user_data %}
+      <tr>
+      <td>{{ user_data.id }}</td>
+      <td>{{ user_data.name }}</td>
+      <td>{{ user_data.number }}</td>
+      <td>{{ user_data.email }}</td>
+      <td>{{ user_data.address }}</td>
+      <td>{{ user_data.college_name }}</td>
+      <td><a target="_blank" href="{{ user_data.link }}">Visit</a></td>
+      <td><a target="_blank" href="{{ user_data.file.url }}">Click to See</a></td>
+
+      </tr>
+      {% endfor %}
+
+  </table>
+
+</div>
+  {% else %}
+  <h1>No data Found</h1>
+  {% endif %}
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

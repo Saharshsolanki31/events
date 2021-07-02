@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>User Registration</title>
+
+  </head>
+  <body>
+  <div class="container-fluid p-1 text-center" style="height:60px;background-image: url('https://lh3.googleusercontent.com/proxy/LwxTDXCMq1lMarrwX5JfbSAluoxRHlmBMWab3vbbKz46mAqmVRl4h6gyCJPZCb_NWsM0TePrbmEgmsLGaK7agBWs6_2I_fNkKsI-Y7EzWSChRehxZNLsaemuK8FTBtMZrj_qXODebdILZcOqZvQCu3DvGcTJaRTez539FtEINx-ZDVe7kNWpx4_2FhP7TM-j52-G5pOEaXm1OH-QdN6i1ZCOnS8bMSG-P-2DR3E');"><h1>Registration For Event</h1></div>
+  {% include 'messages.html' %}
+   <div class="card container shadow mt-5" style="max-width:600px;width:96%;">
+  <div class="card-header text-center" >
+   <strong> User Registration</strong></div>
+  <div class="card-body">
+    <h5 class="card-title text-center">Register For Event Here</h5>
+    <p class="card-text">
+<form class="row g-3" action="{% url 'register' %}" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+  <div class="col-12">
+    <label for="inputEmail4" class="form-label">Name</label>
+    <input type="text" name="name" placeholder="Enter Name Here" class="form-control field" id="inputEmail4" required >
+  </div>
+  <div class="col-12">
+    <label for="inputPassword4" class="form-label">Mobile Number</label>
+    <input type="text" name="number" placeholder="Enter Contact Number Here" class="form-control field" id="inputPassword4" required>
+  </div>
+  <div class="col-12">
+    <label for="inputAddress2" class="form-label">Email</label>
+    <input type="email" name="email" placeholder="Enter Email ID" class="form-control field" id="inputAddress2" required >
+  </div>
+
+  <div class="col-12">
+    <label for="inputAddress" class="form-label">Address</label>
+    <input type="text" name="address" placeholder="Enter Address Here" class="form-control field"  required>
+  </div>
+
+       <div class="col-12">
+    <label for="inputAddress" class="form-label">College Name</label>
+    <input type="text" name="college_name" placeholder="Enter College Name" class="form-control field"  required>
+  </div>
+
+        <div class="col-12">
+    <label for="inputCity" class="form-label">File</label>
+    <input type="file" name="file" placeholder="Choose File" class="form-control field" id="inputCity" >
+  </div>
+  <div class="col-12">
+    <label for="inputCity" class="form-label">Drive Link</label>
+    <input type="text" name="link" placeholder="Enter Drive link" class="form-control field" id="inputCity">
+  </div>
+
+  <div class="col-12">
+    <div class="form-check">
+      <input class="form-check-input field" type="checkbox" id="gridCheck" required>
+      <label class="form-check-label" for="gridCheck">
+        Agree terms and conditions
+      </label>
+    </div>
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Register</button>
+  </div>
+</form>
+
+
+    </p>
+  </div>
+</div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
